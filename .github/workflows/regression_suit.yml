@@ -8,13 +8,13 @@ on:
       branches:
           -main
 
-       schedule:
-        -cron: */5 * * * *
+    schedule:
+        -cron: '*/5 * * * *'
 jobs:
     run-tests:
        run-on: ubantu-latest
 
-     steps:
+    steps:
        -name: checkout code
         uses: actions/checkout@v3
 
