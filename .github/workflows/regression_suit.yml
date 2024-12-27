@@ -1,1 +1,37 @@
+name: regression_suit
 
+on: 
+    push:
+      branches:
+          -main
+    pull_request:
+      branches:
+          -main
+
+jobs:
+    run-tests:
+       run-on: ubantu-latest
+
+     steps:
+       -name: checkout code
+        uses: actions/checkout@v2
+
+       -name: setup python
+        uses: actions/setu-python@v2
+        with:
+            python-version: '3.9'
+       
+       -name: install dependencies
+         run: 
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+       -name: run tests
+         run:
+            pytest --html=report.html -s -self-contained-html
+
+       -name: upload report
+        uses: actions/upload-artifact@v2
+        with:
+           name: pytest-report
+           path: report.html
