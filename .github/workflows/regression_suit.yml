@@ -38,6 +38,5 @@ jobs:
           name: pytest-report
           path: reports.html
 
-      - name: Log timestamp
-        run: date
+      
 
