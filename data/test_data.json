@@ -1,0 +1,13 @@
+{
+    "user_payload": {   
+        "name":"Adarsh",
+        "email": "",
+        "gender":"male",
+        "status":"active"
+    },
+    "updated_payload": { 
+        "name": "Ram", 
+        "email": "",
+        "gender":"female"
+        }
+}
