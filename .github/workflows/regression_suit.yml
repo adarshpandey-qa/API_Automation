@@ -16,10 +16,10 @@ jobs:
 
      steps:
        -name: checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
        -name: setup python
-        uses: actions/setu-python@v2
+        uses: actions/setu-python@v3
         with:
             python-version: '3.9'
        
@@ -33,7 +33,7 @@ jobs:
             pytest --html=report.html -s -self-contained-html
 
        -name: upload report
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
            name: pytest-report
            path: report.html
